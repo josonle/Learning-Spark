@@ -1,0 +1,6 @@
+you,jump
+i,jump
+you,jump
+i,jump
+jump,jump,jump
+u,i,jump
