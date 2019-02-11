@@ -51,3 +51,5 @@ shuffle操作中常用针对某个key对一组数据进行操作，比如说grou
 - foreach(func)：调用func来遍历RDD中每个元素
 - saveAsTextFile(path)：将数据集中的元素以文本文件（或文本文件集合）的形式写入本地文件系统、HDFS 或其它 Hadoop 支持的文件系统中的给定目录中。Spark 将对每个元素调用 toString 方法，将数据元素转换为文本文件中的一行记录
 - countByKey():仅适用于（K,V）类型的 RDD 。返回具有每个 key 的计数的 （K , Int）对 的 Map
+  - sortBy(func, ascending)：通过指定排序函数func对RDD中元素排序，ascending 是否升序 【默认true升序，一般func指定按哪个值排序】
+
