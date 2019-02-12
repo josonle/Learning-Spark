@@ -8,7 +8,7 @@ object Action {
     val conf = new SparkConf().setMaster("local").setAppName("Action")
     val sc = new SparkContext(conf)
     
-    val rdd = sc.parallelize((1 to 10), 1)
+   /* val rdd = sc.parallelize((1 to 10), 1)
     println(rdd.take(3))  //返回数组
     println(rdd.reduce(_+_))
     println(rdd.collect())    //返回数组
@@ -17,6 +17,7 @@ object Action {
     wc.flatMap(_.split(",")).map((_,1)).reduceByKey(_+_)
     .saveAsTextFile("data/result")    //只能指定保存的目录
     //countByKey见Transformation中求解平均成绩
+    */
     sc.stop()
   }  
 }
