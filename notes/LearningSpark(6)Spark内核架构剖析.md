@@ -59,5 +59,3 @@ SparkContext另一重要作用就是构造DAGScheduler。程序中每遇到Actio
 ### yarn-client运行模式
 
 如上所提的，这种模式的不同在于Driver是部署在本地提交的那台机器上的。过程大致如yarn-cluster，不同在于ApplicationMaster实际上是ExecutorLauncher，而申请到的NodeManager所启动的Executor是要向本地的Driver注册的，而不是向ApplicationMaster注册
-
-
