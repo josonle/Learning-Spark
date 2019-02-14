@@ -11,3 +11,4 @@ At Alpine, we have made it dead simple to get started with Spark by including th
 As a Spark certified company, Alpine Data Labs will be at the Summit. We¡¯d love to see you there!
 
 Want to meet with us?  Click here to set up an appointment at your convenience. Or just send a tweet to our Product & Marketing Director Joel Horwitz @JSHorwitz.
+
