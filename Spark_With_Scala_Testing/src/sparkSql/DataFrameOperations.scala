@@ -24,7 +24,8 @@ object DataFrameOperations {
 //    people.select(functions.col("age").cast(DataTypes.DoubleType)).show()
     
     //    people.select($"name", $"age" + 1).show()
-    //    people.select("name").show()    //select($"name")等效，后者好处看上面
+//    people.select(people("age")+1, people.col("name")).show()
+    //    people.select("name").s1how()    //select($"name")等效，后者好处看上面
     //    people.filter($"name".contains("ust")).show()
     //    people.filter($"name".like("%ust%")).show
 //    people.filter($"name".rlike(".*ust.*")).show()
@@ -35,7 +36,7 @@ object DataFrameOperations {
 
     println("Filter中如何取反*****************")
 //    people.filter(!(people("name") contains ("ust"))).select("name", "age").show()
-
+    people.groupBy("age").count().show()
 //    people.createOrReplaceTempView("sqlDF")
 //    spark.sql("select * from sqlDF where name not like '%ust%' ").show()
     
