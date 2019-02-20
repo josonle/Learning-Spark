@@ -1,4 +1,7 @@
+## 提交应用的脚本和可选参数
+
 可以选择local模式下运行来测试程序，但要是在集群上运行还需要通过spark-submit脚本来完成。官方文档上的示例是这样写的（其中表明哪些是必要参数）：
+
 ```
 ./bin/spark-submit \
   --class <main-class> \
@@ -37,6 +40,14 @@
 > 10
 ```
 每次提交都写这么多肯定麻烦，可以写个脚本
+
+## 从文件中加载配置
+
+**spark-submit** 脚本可以从一个 **properties** 文件加载默认的 [Spark configuration values](http://spark.apache.org/docs/latest/configuration.html) 并且传递它们到您的应用中去。默认情况下，它将从 **Spark** 目录下的 ***conf/spark-defaults.conf*** 读取配置。更多详细信息，请看 [加载默认配置](http://spark.apache.org/docs/latest/configuration.html#loading-default-configurations) 部分。
+
+加载默认的 **Spark** 配置，这种方式可以消除某些标记到 **spark-submit** 的必要性。例如，如果 ***spark.master*** 属性被设置了，您可以在 **spark-submit** 中安全的省略。一般情况下，明确设置在 **SparkConf** 上的配置值的优先级最高，然后是传递给 **spark-submit** 的值，最后才是 **default value**（默认文件）中的值。
+
+如果您不是很清楚其中的配置设置来自哪里，您可以通过使用 ***--verbose*** 选项来运行 **spark-submit** 打印出细粒度的调试信息
 
 更多内容可参考文档：[提交应用](http://cwiki.apachecn.org/pages/viewpage.action?pageId=3539265) ，[Spark-Submit 参数设置说明和考虑](https://www.alibabacloud.com/help/zh/doc-detail/28124.htm)
 
