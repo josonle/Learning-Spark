@@ -24,6 +24,7 @@ val sqlContext = new SQLContext(sc)
 import org.apache.spark.sql.SparkSession
 
 val spark = SparkSession.builder().master("local").appName("DataFrame API").getOrCreate()
+//或者 SparkSession.builder().config(conf=SparkConf()).getOrCreate()
 //导入隐式转换import spark.implicits._
 ```
 
